@@ -1,7 +1,192 @@
 {
     "package": {
+        "license": "MIT",
+        "engines": {
+            "node": ">=12"
+        },
         "dependencies": {},
-        "devDependencies": {},
-        "eslintConfig": {}
+        "devDependencies": {
+            "@commitlint/cli": "^11.0.0",
+            "@commitlint/config-conventional": "^11.0.0",
+            "@types/node": "^12.0.0",
+            "@types/react": "^16.9.53",
+            "@types/react-dom": "^16.9.8",
+            "@typescript-eslint/eslint-plugin": "^4.6.0",
+            "@typescript-eslint/parser": "^4.6.0",
+            "eslint": "^7.12.1",
+            "eslint-config-prettier": "^6.15.0",
+            "eslint-config-react-app": "^6.0.0",
+            "eslint-plugin-prettier": "^3.1.4",
+            "eslint-plugin-react": "^7.21.5",
+            "eslint-plugin-react-hooks": "^4.2.0",
+            "husky": "^4.3.0",
+            "lint-staged": "^10.5.0",
+            "prettier": "^2.1.2",
+            "typescript": "^4.0.5"
+        },
+        "scripts": {
+            "lint": "eslint --ext .js,.ts,.tsx src/"
+        },
+        "eslintConfig": {
+            "env": {
+                "browser": true,
+                "es6": true,
+                "node": true
+            },
+            "parserOptions": {
+                "sourceType": "module",
+                "ecmaVersion": 2020,
+                "ecmaFeatures": {
+                    "impliedString": true,
+                    "jsx": true
+                }
+            },
+            "extends": [
+                "react-app",
+                "plugin:prettier/recommended",
+                "prettier/react"
+            ],
+            "plugins": ["react"],
+            "rules": {
+                "no-plusplus": "error",
+                "no-param-reassign": "off",
+                "max-len": "off",
+                "react/jsx-filename-extension": [
+                    "error",
+                    { "extensions": [".js", ".tsx"] }
+                ],
+                "prettier/prettier": [
+                    "error",
+                    {
+                        "printWidth": 80,
+                        "tabWidth": 4,
+                        "singleQuote": true,
+                        "arrowParens": "avoid",
+                        "endOfLine": "auto"
+                    }
+                ]
+            },
+            "overrides": [
+                {
+                    "files": ["*.ts"],
+                    "extends": [
+                        "eslint:recommended",
+                        "plugin:@typescript-eslint/eslint-recommended",
+                        "plugin:@typescript-eslint/eslint-recommended",
+                        "plugin:prettier/recommended",
+                        "prettier/react",
+                        "prettier/@typescript-eslint"
+                    ],
+                    "rules": {
+                        "no-plusplus": "error",
+                        "no-param-reassign": "off",
+                        "max-len": "off",
+                        "no-use-before-define": "off",
+                        "@typescript-eslint/no-use-before-define": "error",
+                        "@typescript-eslint/explicit-member-accessibility": [
+                            "error",
+                            { "accessibility": "no-public" }
+                        ],
+                        "@typescript-eslint/explicit-function-return-type": [
+                            "error",
+                            { "allowExpressions": true, "allowTypedFunctionExpressions": true }
+                        ],
+                        "@typescript-eslint/no-unused-vars": [
+                            "error",
+                            { "ignoreRestSiblings": true }
+                        ],
+                        "prettier/prettier": [
+                            "error",
+                            {
+                                "printWidth": 80,
+                                "tabWidth": 4,
+                                "singleQuote": true,
+                                "arrowParens": "avoid",
+                                "endOfLine": "auto"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "files": ["*.tsx"],
+                    "extends": [
+                        "eslint:recommended",
+                        "react-app",
+                        "plugin:@typescript-eslint/eslint-recommended",
+                        "plugin:@typescript-eslint/eslint-recommended",
+                        "plugin:prettier/recommended",
+                        "prettier/@typescript-eslint"
+                    ],
+                    "plugins": ["react"],
+                    "rules": {
+                        "no-plusplus": "error",
+                        "no-param-reassign": "off",
+                        "max-len": "off",
+                        "no-use-before-define": "off",
+                        "@typescript-eslint/no-use-before-define": "error",
+                        "@typescript-eslint/explicit-member-accessibility": [
+                            "error",
+                            { "accessibility": "no-public" }
+                        ],
+                        "@typescript-eslint/explicit-function-return-type": [
+                            "error",
+                            { "allowExpressions": true, "allowTypedFunctionExpressions": true }
+                        ],
+                        "@typescript-eslint/no-unused-vars": [
+                            "error",
+                            { "ignoreRestSiblings": true }
+                        ],
+                        "react/prop-types": "off",
+                        "react/jsx-filename-extension": [
+                            "error",
+                            { "extensions": [".js", ".tsx"] }
+                        ],
+                        "prettier/prettier": [
+                            "error",
+                            {
+                                "printWidth": 80,
+                                "tabWidth": 4,
+                                "singleQuote": true,
+                                "arrowParens": "avoid",
+                                "endOfLine": "auto"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "files": ["*.d.ts"],
+                    "rules": {
+                        "spaced-comment": "off"
+                    }
+                }
+            ]
+        },
+        "husky": {
+            "hooks": {
+                "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+                "pre-commit": "lint-staged"
+            }
+        },
+        "lint-staged": {
+            "*.{js,ts,tsx}": [
+                "eslint --fix"
+            ]
+        },
+        "commitlint": {
+            "extends": [
+                "@commitlint/config-conventional"
+            ],
+            "rules": {
+                "scope-case": [
+                    2,
+                    "always",
+                    [
+                        "lower-case",
+                        "camel-case",
+                        "pascal-case"
+                    ]
+                ]
+            }
+        }
     }
 }
