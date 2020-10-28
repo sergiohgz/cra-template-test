@@ -7,14 +7,14 @@
   "description": "Test to create template for CRA",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sergiohgz/cra-template-test.git"
+    "url": "https://github.com/sherrera2/cra-template-test.git"
   },
   "license": "MIT",
   "engines": {
     "node": ">=10"
   },
   "bugs": {
-    "url": "https://github.com/sergiohgz/cra-template-test/issues"
+    "url": "https://github.com/sherrera2/cra-template-test/issues"
   },
   "files": [
     "template",
