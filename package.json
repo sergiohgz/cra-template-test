@@ -1,0 +1,22 @@
+{
+  "name": "cra-template-test",
+  "version": "1.0.0",
+  "keywords": [
+    "react", "create-react-app", "template", "test"
+  ],
+  "description": "Test to create template for CRA",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sergiohgz/cra-template-test.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "bugs": {
+    "url": "https://github.com/sergiohgz/cra-template-test/issues"
+  },
+  "files": [
+    "template.json"
+  ]
+}
