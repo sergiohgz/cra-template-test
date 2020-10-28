@@ -4,7 +4,10 @@
         "engines": {
             "node": ">=12"
         },
-        "dependencies": {},
+        "dependencies": {
+            "axios": "^0.21.0",
+            "qs": "^6.9.4"
+        },
         "devDependencies": {
             "@commitlint/cli": "^11.0.0",
             "@commitlint/config-conventional": "^11.0.0",
