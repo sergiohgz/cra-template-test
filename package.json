@@ -17,6 +17,7 @@
     "url": "https://github.com/sergiohgz/cra-template-test/issues"
   },
   "files": [
+    "template",
     "template.json"
   ]
 }
